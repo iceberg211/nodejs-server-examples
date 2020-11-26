@@ -1,6 +1,6 @@
 FROM node:12.18.2-slim
 
-WORKDIR /usr/app/00-static
+WORKDIR /usr/app/04-static
 COPY . .
 RUN yarn
 

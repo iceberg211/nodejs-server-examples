@@ -1,7 +1,8 @@
 const { Shop } = require('../models');
 
+// 对待
 class ShopService {
-  async init() {}
+  async init() { }
 
   async find({ id, pageIndex = 0, pageSize = 10 }) {
     if (id) {

@@ -19,16 +19,19 @@ class ChaosController {
     return router;
   }
 
+  // 中间件报错
   getSyncErrorHandle = (req, res, next) => {
     next(new Error('Chaos test - sync error handle'));
   };
 
+  // 同步throw
   getSyncErrorThrow = () => {
     throw new Error('Chaos test - sync error throw');
   };
 
   getThunkErrorHandle = (req, res, next) => {
     setTimeout(() => {
+      // settimout出粗
       next(new Error('Chaos test - thunk error handle'));
     }, ASYNC_MS);
   };

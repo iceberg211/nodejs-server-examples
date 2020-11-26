@@ -1,5 +1,6 @@
 const { Model } = require('sequelize');
 
+// 实例化表
 module.exports = (sequelize, DataTypes) => {
   class Shop extends Model {
     /**

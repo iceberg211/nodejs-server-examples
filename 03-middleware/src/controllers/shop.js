@@ -14,6 +14,7 @@ class ShopController {
     router.get('/:shopId', this.getOne);
     router.put('/:shopId', this.put);
     router.delete('/:shopId', this.delete);
+    // 对post请求进行urlencoded处理
     router.post('/', bodyParser.urlencoded({ extended: false }), this.post);
     return router;
   }

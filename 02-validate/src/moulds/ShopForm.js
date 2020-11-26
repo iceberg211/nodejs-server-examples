@@ -1,5 +1,6 @@
 const Yup = require('yup');
 
+// 表单校验
 exports.createShopFormSchema = () =>
   Yup.object({
     name: Yup.string()

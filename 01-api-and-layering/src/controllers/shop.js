@@ -5,9 +5,11 @@ class ShopController {
   shopService;
 
   async init() {
+    // 实体化shopService, 定义了路由
     this.shopService = await shopService();
-
+    
     const router = Router();
+    // 定义路由，然后暴露RESTful接口
     router.get('/', this.getAll);
     router.get('/:shopId', this.getOne);
     router.put('/:shopId', this.put);

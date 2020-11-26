@@ -10,6 +10,7 @@ const publicDir = resolve('public');
 const mouldsDir = resolve('src/moulds');
 
 async function bootstrap() {
+  // 挂载静态文件
   server.use(express.static(publicDir));
   server.use('/moulds', express.static(mouldsDir));
   server.use(await initMiddlewares());
@@ -20,7 +21,7 @@ async function bootstrap() {
 }
 
 // 监听未捕获的 Promise 异常，
-// 直接退出进程
+// 直接退出进程，这样好吗？
 process.on('unhandledRejection', (err) => {
   console.error(err);
   process.exit(1);

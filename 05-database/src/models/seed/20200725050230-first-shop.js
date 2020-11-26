@@ -1,4 +1,5 @@
 module.exports = {
+  // 使用数据填充
   up: async (queryInterface, Sequelize) => {
     await queryInterface.bulkInsert('shop', [
       { name: '良品铺子', created_at: new Date(), updated_at: new Date() },

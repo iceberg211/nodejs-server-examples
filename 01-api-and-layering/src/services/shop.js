@@ -57,6 +57,7 @@ class ShopService {
 let service;
 module.exports = async function () {
   if (!service) {
+    // 实例化然后返回
     service = new ShopService();
     await service.init();
   }

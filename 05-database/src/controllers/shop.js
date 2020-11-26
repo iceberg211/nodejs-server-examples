@@ -4,6 +4,11 @@ const shopService = require('../services/shop');
 const { createShopFormSchema } = require('../moulds/ShopForm');
 const cc = require('../utils/cc');
 
+
+/**
+ * @class ShopController 
+ *  增删改查
+ */
 class ShopController {
   shopService;
 
@@ -44,6 +49,7 @@ class ShopController {
     try {
       await createShopFormSchema().validate({ name });
     } catch (e) {
+      // 对参数进行校验
       res.status(400).send({ success: false, message: e.message });
       return;
     }

@@ -1,5 +1,6 @@
 const { Router } = require('express');
 
+// 健康检查
 class HealthController {
   async init() {
     const router = Router();

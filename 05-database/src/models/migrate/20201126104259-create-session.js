@@ -1,16 +1,16 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    // 定义shop表结构
-    await queryInterface.createTable('shop', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER,
+    await queryInterface.createTable('session', {
+      sid: {
+        type: Sequelize.STRING(36),
       },
-      name: {
-        type: Sequelize.STRING,
+      expires: {
+        type: Sequelize.DATE,
       },
+      data: {
+        type: Sequelize.TEXT,
+      },
+
       created_at: {
         allowNull: false,
         type: Sequelize.DATE,
@@ -21,7 +21,8 @@ module.exports = {
       },
     });
   },
+
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('shop');
+    queryInterface.dropTable('session');
   },
 };
